@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Это служебная информация. Говорит браузеру, как читать файл -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лордок: Имя твоего персонажа</title>
+    
+    <style>
+        /* Это КАСКАДНЫЕ ТАБЛИЦЫ СТИЛЕЙ (CSS). 
+           Они отвечают за красоту: цвета, шрифты, рамки. */
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Красивый шрифт */
+            background-color: #1a1a2e; /* Темный фон, как в фэнтези */
+            color: #e0e0e0; /* Светлый текст */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Выравниваем всё по центру */
+        }
+
+        .container {
+            max-width: 800px; /* Ширина твоего "свитка" */
+            background-color: #16213e; /* Темно-синий фон контейнера */
+            padding: 30px;
+            margin: 20px;
+            border-radius: 20px; /* Закругленные края */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8); /* Тень вокруг */
+            border: 1px solid #0f3460;
+        }
+
+        h1 {
+            color: #e94560; /* Красно-алый цвет для имени */
+            text-align: center;
+            font-size: 3em;
+            border-bottom: 2px solid #e94560;
+            padding-bottom: 10px;
+        }
+
+        .avatar {
+            display: block; /* Делаем картинку блоком */
+            max-width: 200px; /* Ограничиваем размер */
+            height: auto;
+            border-radius: 50%; /* Делаем круглую аватарку */
+            border: 4px solid #e94560;
+            margin: 0 auto 20px auto; /* Центрируем */
+            /* Если у тебя нет картинки, эта рамка останется пустой, но красивой */
+        }
+
+        .info-block {
+            background-color: #0f3460;
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #e94560;
+        }
+
+        /* Стили для списка характеристик */
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Две колонки */
+            gap: 10px;
+            list-style: none; /* Убираем маркеры списка */
+            padding: 0;
+        }
+
+        .stats li {
+            background: #1a1a2e;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #e94560;
+        }
+
+        /* Стили для кнопки-переключателя */
+        .btn {
+            background-color: #e94560;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer; /* Рука при наведении */
+            display: block;
+            margin: 20px auto;
+            transition: all 0.3s ease; /* Анимация */
+        }
+
+        .btn:hover {
+            background-color: #b8304a;
+            transform: scale(1.05); /* Кнопка чуть увеличивается при наведении */
+        }
+
+        #secretMessage {
+            display: none; /* Скрыто по умолчанию */
+            background-color: #1a1a2e;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px dashed #e94560;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- ============================================== -->
+    <!-- ЗДЕСЬ НАЧИНАЕТСЯ СОДЕРЖАНИЕ (HTML)              -->
+    <!-- Всё, что между <div> и </div> — это текст твоего лора -->
+    <!-- ============================================== -->
+
+    <!-- 1. Аватар (вставь ссылку на картинку вместо #) -->
+    <!-- Если картинки нет, просто удали эту строчку -->
+    <img src="https://via.placeholder.com/200x200/e94560/ffffff?text=Ваш+Герой" alt="Аватар персонажа" class="avatar">
+
+    <!-- 2. Имя -->
+    <h1>Элрик Теневой Клинок</h1>
+
+    <!-- 3. Основная информация -->
+    <div class="info-block">
+        <h2>📜 Краткое описание</h2>
+        <p>
+            Элрик — последний наследник древнего рода, который проклят тьмой. 
+            Он носит с собой меч, выкованный из упавшей звезды, и ищет способ снять проклятие со своей души.
+        </p>
+    </div>
+
+    <!-- 4. Характеристики (Stats) -->
+    <div class="info-block">
+        <h2>⚔️ Характеристики</h2>
+        <ul class="stats">
+            <li><strong>Сила:</strong> 8/10</li>
+            <li><strong>Ловкость:</strong> 9/10</li>
+            <li><strong>Интеллект:</strong> 6/10</li>
+            <li><strong>Харизма:</strong> 4/10 (мрачный)</li>
+            <li><strong>Магия:</strong> 10/10 (Тьма)</li>
+        </ul>
+    </div>
+
+    <!-- 5. Предыстория -->
+    <div class="info-block">
+        <h2>📖 Предыстория</h2>
+        <p>
+            Родился в городе, которого больше нет на картах. В 16 лет пережил резню своей семьи, 
+            устроенную культистами. Выжил только благодаря тому, что проснулся его магический дар. 
+            Теперь странствует по миру, собирая артефакты и избегая любовных приключений.
+        </p>
+        <p><em>"Тьма — не зло. Тьма — это покой."</em> — девиз Элрика.</p>
+    </div>
+
+    <!-- 6. Интерактив (JavaScript) -->
+    <!-- Это кнопка, которая что-то делает при нажатии -->
+    <button class="btn" onclick="showSecret()">🔮 Узнать тайну</button>
+    
+    <!-- Скрытый блок, который появляется по нажатию -->
+    <div id="secretMessage">
+        <h3>⚡ Секрет раскрыт!</h3>
+        <p>На самом деле Элрик — это перерождение древнего бога, но он сам об этом ещё не знает.</p>
+    </div>
+
+</div>
+
+<!-- ============================================== -->
+<!-- СКРИПТЫ (JavaScript) — оживляют сайт           -->
+<!-- ============================================== -->
+<script>
+    // Это функция. Она выполняется, когда ты нажимаешь на кнопку.
+    function showSecret() {
+        // Находим наш скрытый блок по его ID
+        var secretDiv = document.getElementById('secretMessage');
+        
+        // Проверяем: если он скрыт (display: none), то показываем его
+        if (secretDiv.style.display === 'none') {
+            secretDiv.style.display = 'block';
+        } else {
+            // Если он уже показан, то прячем обратно (чтобы можно было нажать снова)
+            secretDiv.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
